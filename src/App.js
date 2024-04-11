@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1> purnima </h1>
+      <h1> welcome purnima </h1>
       <header className="App-header">
         
         <p>
