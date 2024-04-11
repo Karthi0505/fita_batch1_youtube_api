@@ -1,5 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar';
+import {BrowserRouter,Routes,Route}from 'react-dom'
+import Feed from './Feed.js'
+import VideoDetail from './VideoDetail.js'
+import ChannnelDetail from './ChannnelDetail.js'
+import SearchTerm from './SearchTerm.js'
 
 function App() {
   return (
@@ -18,7 +24,17 @@ function App() {
         >
           React App
         </a>
-        
+        <Navbar/>
+        <BrowserRouter>
+
+        <Routes>
+          <Route path="/" element={<Feed />}></Route>
+          <Route path="/Video" element={<VideoDetail />}></Route>
+          <Route path="/Channel" element={<ChannnelDetail />}></Route>
+          <Route path="/search" element={<SearchTerm />}></Route>
+        </Routes>
+
+        </BrowserRouter>
       </header>
     </div>
   );
