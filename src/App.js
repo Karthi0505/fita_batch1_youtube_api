@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import SearchBar from './Components/SearchBar';
+import SideBar from './SideBar';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
         </a>
         <SearchBar />
       </header>
+      <SideBar />
     </div>
   );
 }
