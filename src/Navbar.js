@@ -1,14 +1,16 @@
 import React from 'react'
-import Link from 'react-dom'
+import  { BrowserRouter, Link } from 'react-router-dom'
 
 
 const Navbar = () => {
   return (
     <div>
+      <BrowserRouter>
         <Link to='/'>Feed Page</Link>
         <Link to='/Video'>VideoDetail Page</Link>
         <Link to='/Channal'>ChannnelDetail Page</Link>
         <Link to='/Search'>SearchTerm Page</Link>
+        </BrowserRouter>
     </div>
   )
 }

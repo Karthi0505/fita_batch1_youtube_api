@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+  
 import './App.css';
 import Navbar from './Navbar';
-import {BrowserRouter,Routes,Route}from 'react-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Feed from './Feed.js'
 import VideoDetail from './VideoDetail.js'
 import ChannnelDetail from './ChannnelDetail.js'
