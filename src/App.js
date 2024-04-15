@@ -1,31 +1,26 @@
   
 import './App.css';
-import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Feed from './Feed.js'
-import VideoDetail from './VideoDetail.js'
-import ChannnelDetail from './ChannnelDetail.js'
-import SearchTerm from './SearchTerm.js'
+import Feed from './components/Feed.js'
+import VideoDetail from './components/VideoDetail.js'
+import ChannnelDetail from './components/ChannnelDetail.js'
+import SearchTerm from './components/SearchTerm.js'
 
 function App() {
   return (
     <div className="App">
-      <h1> welcome purnima, Dhanushiya, priyanka </h1>
-      <header className="App-header">
+      
         
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          React App
-        </a>
-        <Navbar/>
         <BrowserRouter>
+
+        <nav className=' header-links'>
+            <Link to="/" >Feed Page</Link>
+            <Link to="/Video" >VideoDetail Page</Link>
+            <Link to="/Channel"  >ChannnelDetail Page</Link>
+            <Link to="/search" >SearchTerm Page</Link>
+          </nav>
+        
 
         <Routes>
           <Route path="/" element={<Feed />}></Route>
@@ -35,7 +30,7 @@ function App() {
         </Routes>
 
         </BrowserRouter>
-      </header>
+      
     </div>
   );
 }
