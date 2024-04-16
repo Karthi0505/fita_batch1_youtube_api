@@ -10,32 +10,34 @@ import About from './components/About.js';
 
 function App() {
   return (
-    <div className="App">
-      
-        
-        <BrowserRouter>
-
-        <nav className=' header-links'>
+    <div>
+      <BrowserRouter >
+        {/* <h2> Links </h2> */}
+        <header className='header d-flex'>
+          <nav className=' header-links'>
             <Link to="/" >Feed Page</Link>
             <Link to="/Video" >VideoDetail Page</Link>
             <Link to="/Channel"  >ChannnelDetail Page</Link>
             <Link to="/search" >SearchTerm Page</Link>
-            <Link to="/about"> About</Link>
+            <Link to="/About" >About Page</Link>
           </nav>
         
+        <Searchbar />
+        </header>
+        <SideBar />
+
 
         <Routes>
           <Route path="/" element={<Feed />}></Route>
           <Route path="/Video" element={<VideoDetail />}></Route>
           <Route path="/Channel" element={<ChannnelDetail />}></Route>
           <Route path="/search" element={<SearchTerm />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          
+          <Route path="/About" element={<About />}></Route>
         </Routes>
-
-        </BrowserRouter>
-      
+        
+      </BrowserRouter>
     </div>
+    
   );
 }
 

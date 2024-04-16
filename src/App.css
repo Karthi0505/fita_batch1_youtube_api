@@ -16,8 +16,11 @@ nav.header-links a {
   font-size: 18px;
   font-weight: bold;
   
+}
 
-
+.App {
+  display: flex;
+  font-size: 20px;
 }
 nav.header-links a:first-child{
   padding-left: 0;
