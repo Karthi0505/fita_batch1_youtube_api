@@ -7,6 +7,8 @@ import VideoDetail from './components/VideoDetail.js'
 import ChannnelDetail from './components/ChannnelDetail.js'
 import SearchTerm from './components/SearchTerm.js'
 import About from './components/About.js';
+import SearchBar from './components/SearchBar.js'
+import SideBar from './components/SideBar.js'
 
 function App() {
   return (
@@ -22,8 +24,9 @@ function App() {
             <Link to="/About" >About Page</Link>
           </nav>
         
-        <Searchbar />
+        <SearchBar />
         </header>
+        
         <SideBar />
 
 
