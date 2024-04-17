@@ -1,47 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-function SearchBar() {
-    const [query, setQuery] = useState('');
-    const [videos, setVideos] = useState([]);
+const SearchBar = () => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const [video, setVideo] = useState("");
+    const [results, setResults] = useState("");
+    function handleChange (e) {
+        setVideo(video)
+        console.log(e)
+        console.log(e.target.value)
+    }
+    function formSubmit (e) {
+      e.preventDefault();
+        setResults(video)
+        console.log(e)
 
-        const url = 'https://youtube-v31.p.rapidapi.com/captions?part=snippet&videoId=M7FIvfx5J10';
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': '878619dbc4mshdfc6173e68b1585p1c26bbjsn8cb75c6bc728',
-                'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
-            }
-        };
+    }
 
-        fetch(url, options)
-            .then(response => response.json())
-            .then(data => {
-
-                setVideos(data.items);
-            })
-            .catch(error => console.error('Error:', error));
-    };
-
-
-    return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search YouTube"
-            />
-            <button type="submit">Search</button>
-            <ul>
-                {videos.map((video) => (
-                    <li key={video.id.videoId}>{video.snippet.title}</li>
-                ))}
-            </ul>
-        </form>
-    );
+  return (
+    <div>SearchBar
+      <h1>{results}</h1>
+       <input onChange={handleChange} type='text' placeholder='Search Videos...'></input>
+       <button onclick={formSubmit} type='submit'>Search</button>
+    </div>
+  )
 }
 
-export default SearchBar;
+export default SearchBar
