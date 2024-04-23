@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Videos from './Videos.js';
 import SideBar from './SideBar.js';
+import './Feed.css';
 
 const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
 const options = {
@@ -31,9 +32,9 @@ const Feed = () => {
   return (
     <div className="feed-container">
       
-       <h4 className="videos-title">
+       <h3 className="videos-title">
          {selectedCategory} <span className="highlight-color">videos</span>
-       </h4>
+       </h3>
 
         <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
         

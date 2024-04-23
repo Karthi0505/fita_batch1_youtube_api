@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { categories } from '../utils/constant'; 
 import './Sidebar.css';
 
@@ -6,8 +6,6 @@ const SideBar = ({selectedCategory, setSelectedCategory}) => {
 
   return (
     <div className='categories-container'>
-      
-      {/* {selectedCategory} <h3> videos </h3> */}
 
       {categories.map((category) => (
         
