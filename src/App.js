@@ -7,13 +7,13 @@ import ChannnelDetail from './Components/ChannnelDetail.js'
 import SearchTerm from './Components/SearchTerm.js'
 import About from './Components/About.js';
 import SearchBar from './Components/SearchBar.js';
-import SideBar from './Components/SideBar.js';
+
 
 function App() {
   return (
     <div>
       <BrowserRouter >
-        {/* <h2> Links </h2> */}
+        
         <header className='header d-flex'>
           <nav className=' header-links'>
             <Link to="/" >Feed Page</Link>
@@ -26,7 +26,7 @@ function App() {
         <SearchBar />
         
         </header>
-        <SideBar />
+        
 
 
         <Routes>
