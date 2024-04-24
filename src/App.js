@@ -6,7 +6,6 @@ import Feed from './components/Feed.js'
 import VideoDetail from './components/VideoDetail.js'
 import ChannnelDetail from './components/ChannnelDetail.js'
 import SearchTerm from './components/SearchTerm.js'
-import About from './components/About.js';
 import SearchBar from './components/SearchBar.js'
 import SideBar from './components/SideBar.js'
 
@@ -21,7 +20,7 @@ function App() {
             <Link to="/Video" >VideoDetail Page</Link>
             <Link to="/Channel"  >ChannnelDetail Page</Link>
             <Link to="/search" >SearchTerm Page</Link>
-            <Link to="/About" >About Page</Link>
+            
           </nav>
         
         <SearchBar />
@@ -35,7 +34,7 @@ function App() {
           <Route path="/Video" element={<VideoDetail />}></Route>
           <Route path="/Channel" element={<ChannnelDetail />}></Route>
           <Route path="/search" element={<SearchTerm />}></Route>
-          <Route path="/About" element={<About />}></Route>
+          
         </Routes>
         
       </BrowserRouter>
