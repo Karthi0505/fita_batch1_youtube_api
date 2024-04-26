@@ -17,17 +17,21 @@ const Feed = () => {
   const [videos, setVideos] = useState(null);
 
   useEffect(() => {
+    fetch(BASE_URL, options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => setVideos(data.items))
+        .catch(handleError);
+}, [selectedCategory]);
 
-    fetch(BASE_URL,options)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json()
-    })
-    .then((data) => setVideos(data.items))
-    .catch((error) => console.error( 'Error fetching data: ' ,error));
-    }, [selectedCategory]);
+const handleError = (error) => {
+    console.error('Error fetching data:', error);
+    // Handle the error here, e.g., display an error message to the user
+};
 
   return (
     <div className="feed-container">
@@ -39,7 +43,7 @@ const Feed = () => {
         <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
         
         <p className="copyright">
-          Copyright © 2022 JSM Media
+          Copyright © 2024 React App
         </p>
     
 
