@@ -1,0 +1,12 @@
+.videos {
+    display: "flex";
+    flex-direction:"row";
+    flex-wrap: "wrap";
+    justify-content: "flex-start";
+    align-items: "flex-start";
+    gap: "16px";
+}
+.img {
+    width: 480px ;
+    height: 360px ;
+}
