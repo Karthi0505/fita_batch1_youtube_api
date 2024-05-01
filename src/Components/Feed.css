@@ -1,7 +1,20 @@
+*{
+    box-sizing: border-box;
+}
 .videos-title {
     color: red;
 }
 .copyright {
     color: red;
 }
-
+.videos-container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    margin-bottom: auto;
+    width: 400px;
+    height: 350px;
+}

@@ -18,12 +18,12 @@ const ChannelCard = ({ channelDetail }) => (
       <div className="channel-content">
         <img
           src={channelDetail.snippet.thumbnails.high.url || demoProfilePicture}
-          alt={channelDetail.snippet.title}
+          alt={channelDetail.snippet.channelTitle}
           className="channel-img"
         />
         <div className="channel-info">
           <h6 className="channel-title">
-            {channelDetail.snippet.title}{' '}
+            {channelDetail.snippet.channelTitle}{' '}
             <span className="check-icon">&#10003;</span>
           </h6>
           {channelDetail?.statistics?.subscriberCount && (

@@ -1,16 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { demoChannelTitle, demoChannelUrl, demoThumbnailUrl, demoVideoTitle, demoVideoUrl } from '../utils/constant';
+import { demoChannelTitle, demoChannelUrl, demoThumbnailUrl, demoVideoTitle } from '../utils/constant';
 import './VideoCard.css'
 
-const url = 'https://youtube-v31.p.rapidapi.com/videos?part=contentDetails%2Csnippet%2Cstatistics&id=7ghhRHRP6t4';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'ddae034662msh147bdde8dcb11f3p167d20jsn4a309a58ffb1',
-		'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
-	}
-};
+const url = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCBVjMGOIkavEAhyqpxJ73Dw&part=snippet%2Cid&order=date&maxResults=50';
 
 const VideoCard = ({ video: { id: { videoId }, snippet } }) => (
   <div className="video-card-container">
