@@ -1,40 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ChannelCard.css'; 
-import { demoProfilePicture } from '../utils/constant';
 
+const ChannelCard = ({ channelDetail, marginTop }) => {
+  const channelId = channelDetail?.id?.channelId;
+  const channelTitle = channelDetail?.snippet?.title;
+  const profilePicture = channelDetail?.snippet?.thumbnails?.high?.url;
+  const subscriberCount = parseInt(channelDetail?.statistics?.subscriberCount);
 
-const url = 'https://youtube-v31.p.rapidapi.com/channels?part=snippet%2Cstatistics&id=UCBVjMGOIkavEAhyqpxJ73Dw';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'ddae034662msh147bdde8dcb11f3p167d20jsn4a309a58ffb1',
-		'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
-	}
-};
-const ChannelCard = ({ channelDetail }) => (
-  <div className="channel-card-container">
-    <Link to={url} className="channel-link">
-      <div className="channel-content">
-        <img
-          src={channelDetail.snippet.thumbnails.high.url || demoProfilePicture}
-          alt={channelDetail.snippet.channelTitle}
-          className="channel-img"
-        />
-        <div className="channel-info">
-          <h6 className="channel-title">
-            {channelDetail.snippet.channelTitle}{' '}
+  return (
+    <div className="channel-card-container" style={{ marginTop }}>
+      <Link to={`/channel/${channelId}`} className="card-link">
+        <div className="card-content">
+          <img
+            src={profilePicture || '/default-profile-picture.jpg'} 
+            alt={channelTitle}
+            className="profile-picture"
+          />
+          <h3 className="channel-title">
+            {channelTitle}
             <span className="check-icon">&#10003;</span>
-          </h6>
-          {channelDetail?.statistics?.subscriberCount && (
+          </h3>
+          {subscriberCount && (
             <p className="subscriber-count">
-              {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString('en-US')} Subscribers
+              {subscriberCount.toLocaleString('en-US')} Subscribers
             </p>
           )}
         </div>
-      </div>
-    </Link>
-  </div>
-);
+      </Link>
+    </div>
+  );
+};
 
 export default ChannelCard;

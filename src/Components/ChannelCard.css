@@ -1,52 +1,51 @@
+/* styles/ChannelCard.css */
+
 .channel-card-container {
-    box-shadow: none;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 356px;
-    height: 326px;
-    margin: auto;
-  }
-  
-  .channel-link {
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  .channel-content {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .channel-img {
-    border-radius: 50%;
-    height: 180px;
-    width: 180px;
-    margin-bottom: 16px;
-    border: 1px solid #e3e3e3;
-  }
-  
-  .channel-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .check-icon {
-    font-size: 14px;
-    color: gray;
-    margin-left: 5px;
-  }
-  
-  .subscriber-count {
-    font-size: 15px;
-    font-weight: 500;
-    color: gray;
-    margin: 0;
-  }
-  
+  box-shadow: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  max-width: 356px; 
+  height: 326px;
+  margin: auto;
+}
+
+.card-link {
+  text-decoration: none;
+  color:blue; 
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  margin-bottom: 10px; 
+  border: 1px solid #e3e3e3;
+}
+
+.channel-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 6px; 
+}
+
+.check-icon {
+  font-size: 1rem;
+  color: gray;
+  margin-left: 4px; 
+}
+
+.subscriber-count {
+  font-size: 1rem;
+  color: gray;
+}

@@ -16,7 +16,6 @@ export const categories= [
     {name: "Gym"}
 ];
 
-
 export const demoVideoUrl = '/video/cV2gBU6hKfY';
 export const demoThumbnailUrl = 'https://example.com/default-thumbnail.jpg';
 export const demoVideoTitle = 'Default Video Title';

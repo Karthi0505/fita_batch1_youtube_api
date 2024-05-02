@@ -1,3 +1,5 @@
+import axios from 'axios';  
+
 export const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
 
 const options = {
@@ -9,12 +11,7 @@ const options = {
 };
 
 export const fetchFromAPI = async (url) => {
-  
-        const response = await fetch(`${BASE_URL}/${url}`, options);
-        return await response.json();
+  const { data } = await axios.get(`${BASE_URL}/${url}`, options);
 
-    // .catch (error) {
-    //     console.error('Error fetching data:', error);
-    //     throw error;
-    // }
+  return data;
 };
