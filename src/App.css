@@ -1,4 +1,39 @@
+.header-d-flex{
+  display: flex;
+  background-color: black;
+  
+  
+}
+
+ 
+.header-links{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* margin: 10px; */
+  /* padding: 0; */
+  background-color: red;
+
+}
+.header-links img {
+  width: 5%;
+}
+nav.header-links a {
+  display: block;
+  padding: 15px 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+
+  
+}
+
+
 .App {
   display: flex;
   font-size: 20px;
+}
+nav.header-links a:first-child{
+  padding-left: 0;
+  
 }

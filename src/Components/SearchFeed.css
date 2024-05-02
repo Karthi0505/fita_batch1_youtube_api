@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px;
+  position: absolute;
+ }
+ 
+ .col {
+   width: 300px;
+   border: 1px solid #980505;
+   border-radius: 8px;
+   
+  
+ }
+ 
+ .col:hover {
+   transform: translateY(-5px);
+ }
+ 
+ .col h2 {
+   font-size: 18px;
+   margin: 16px;
+   white-space: nowrap;
+   overflow: hidden;
+   
+ }
+ 
+ .col img {
+   width: 100%;
+   height: auto;
+ }
+ 
+ h1 {
+   text-align: center;
+   color: #333;
+   margin-bottom: 20px;
+ }
+ 
