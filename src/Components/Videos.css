@@ -1,4 +1,34 @@
+/* Videos.css */
+
 .videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.videos > div {
+  position: relative;
+  padding:0%;
+  justify-content: flex-end;
+}
+
+.react-player {
+  position: absolute;
+  width: 50%;
+  height: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+/* .videos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -13,4 +43,4 @@
 .img {
     width: 480px ;
     height: 360px ;
-}
+} */
