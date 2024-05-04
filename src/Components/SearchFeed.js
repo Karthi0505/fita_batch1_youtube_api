@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import "./SearchFeed.css"
+import ReactPlayer from 'react-player';
 // import SearchBar from './SearchBar';
 
 const SearchFeed = ({ query }) => {
@@ -56,10 +57,17 @@ const SearchFeed = ({ query }) => {
 
                   return (
                      <div className="col">
+                        <ReactPlayer
+                  url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`}
+                  className="react-player"
+                  width="100%"
+                  height="100%"
+                  controls
+               />
                         
 
-                        <h2>{curElement.snippet.title}</h2>
-                        <img src={curElement.snippet.thumbnails?.medium?.url} alt={curElement.snippet.title} />
+                        {/* <h2>{curElement.snippet.title}</h2> */}
+                        {/* <img src={curElement.snippet.thumbnails?.medium?.url} alt={curElement.snippet.title} /> */}
                         
                      </div>
                   );
