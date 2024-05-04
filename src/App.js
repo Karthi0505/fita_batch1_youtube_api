@@ -1,18 +1,19 @@
   
 import './App.css';
-import { Link } from 'react-router-dom';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Feed from './components/Feed.js'
-import VideoDetail from './components/VideoDetail.js'
-import ChannnelDetail from './components/ChannnelDetail.js'
-import SearchTerm from './components/SearchTerm.js'
-import About from './components/About.js';
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import Feed from './Components/Feed.js'
+import VideoDetail from './Components/VideoDetail.js'
+import ChannnelDetail from './Components/ChannnelDetail.js'
+import SearchTerm from './Components/SearchTerm.js'
+import About from './Components/About.js';
+import SearchBar from './Components/SearchBar.js';
+
 
 function App() {
   return (
     <div>
       <BrowserRouter >
-        {/* <h2> Links </h2> */}
+        
         <header className='header d-flex'>
           <nav className=' header-links'>
             <Link to="/" >Feed Page</Link>
@@ -22,9 +23,10 @@ function App() {
             <Link to="/About" >About Page</Link>
           </nav>
         
-        <Searchbar />
+        <SearchBar />
+        
         </header>
-        <SideBar />
+        
 
 
         <Routes>
