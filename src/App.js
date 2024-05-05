@@ -7,7 +7,6 @@ import ChannnelDetail from './Components/ChannnelDetail.js'
 import SearchTerm from './Components/SearchTerm.js'
 import About from './Components/About.js';
 import SearchResult from './Components/SearchResult.js';
-import SideBar from './Components/SideBar.js';
 // import SearchFeed from './Components/SearchFeed.js';
 import SearchForm from './Components/SearchForm.js';
 import { useState } from 'react';
@@ -36,9 +35,9 @@ function App() {
 
           </nav>
         
-        <Searchbar />
+        <SearchResult video={video} results={results} />
         </header>
-        <SideBar />
+        
 
 
         <main>
