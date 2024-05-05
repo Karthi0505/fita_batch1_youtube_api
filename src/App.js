@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <BrowserRouter >
-        {/* <h2> Links </h2> */}
+        
         <header className='header d-flex'>
           <nav className=' header-links'>
           <img src='youtube icon.jpeg' alt='' />
@@ -35,14 +35,11 @@ function App() {
            <SearchForm className="search-form" video={video} setVideo={setVideo} setResults={setResults} />
 
           </nav>
-          
-          
-      
+        
+        <Searchbar />
         </header>
-        <SearchResult results={results} video={video} />
-        
         <SideBar />
-        
+
 
         <main>
         <Routes>
