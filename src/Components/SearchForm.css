@@ -1,0 +1,33 @@
+
+.search-form {
+  position: relative; 
+  width: 100%; 
+  max-width: 400px; 
+}
+
+.search-form input[type='text'] {
+  width: 100%; 
+  padding: 10px;
+  font-size: 20px; 
+  border: 100%;
+  border-radius: 20px ; 
+  outline: none;
+}
+
+.search-form button {
+  position: absolute;
+  right: 0; 
+  top: 0; 
+  width: 80px; 
+  height: 100%; 
+  border: 10px;
+  border-radius: 20px ;
+  background-color: #212921;
+  color: rgb(213, 231, 225);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.search-form button:hover {
+  background-color: #003d82;
+}

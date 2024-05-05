@@ -3,14 +3,23 @@
 } */
 .header-d-flex{
   display: flex;
+  background-color: black;
+  
   
 }
+
+ 
 .header-links{
   display: flex;
-  margin: 10px;
-  padding: 10px,15px,;
-  background-color: black;
+  justify-content: space-around;
+  align-items: center;
+  /* margin: 10px; */
+  /* padding: 0; */
+  background-color: red;
 
+}
+.header-links img {
+  width: 5%;
 }
 nav.header-links a {
   display: block;
@@ -18,6 +27,7 @@ nav.header-links a {
   color: #fff;
   font-size: 18px;
   font-weight: bold;
+
   
 }
 
