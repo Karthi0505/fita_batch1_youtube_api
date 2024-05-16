@@ -18,7 +18,11 @@ function Videos({ videos }) {
       {videos.map((curElement, idx) => (
         <div key={idx}>
 
-          <ReactPlayer url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`} />
+          <ReactPlayer url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`}
+          className="react-player"
+          width="100%"
+          height="100%"
+          controls />
 
           
         </div>
