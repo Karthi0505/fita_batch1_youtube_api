@@ -3,7 +3,7 @@ import Loader from './Loader';
 import './Videos.css';
 import ReactPlayer from 'react-player';
 
-function Videos({ videos }) {
+function Videos({ videos, selectedCategory }) {
 
   if (!videos) {
     return <Loader />;
@@ -12,20 +12,29 @@ function Videos({ videos }) {
   console.log(videos);
 
   return (
+    <>
 
-    <div className='videos'>
+      <h3 className="videos-title">
+        {selectedCategory} <span className="highlight-color">videos</span>
+      </h3>
+      
+      <div className='videos-container'>
 
-      {videos.map((curElement, idx) => (
-        <div key={idx}>
+        {videos.map((curElement, idx) => (
+          <div className="videos" key={idx}>
 
-          <ReactPlayer url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`} />
+            <ReactPlayer url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`}
+              className="react-player"
+              controls
+            />
 
-          
-        </div>
-      ))
-      }
 
-    </div>
+          </div>
+        ))
+        }
+
+      </div>
+    </>
   )
 }
 
