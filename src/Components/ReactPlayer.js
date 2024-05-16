@@ -1,11 +1,11 @@
 import React from 'react'
 
-const About = () => {
+const ReactPlayer = () => {
   return (
     <div>
-      <h1> About</h1>
+      
     </div>
   )
 }
 
-export default About
+export default ReactPlayer

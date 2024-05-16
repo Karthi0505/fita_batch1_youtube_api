@@ -1,5 +1,4 @@
-  
-import './App.css';
+
 import {BrowserRouter, Routes, Route,  Link} from 'react-router-dom'
 import Feed from './Components/Feed.js'
 import VideoDetail from './Components/VideoDetail.js'
@@ -10,7 +9,7 @@ import SearchResult from './Components/SearchResult.js';
 // import SearchFeed from './Components/SearchFeed.js';
 import SearchForm from './Components/SearchForm.js';
 import { useState } from 'react';
-
+import './App.css';
 
 
 function App() {
@@ -29,7 +28,7 @@ function App() {
             <Link to="/Video" >VideoDetail Page</Link>
             <Link to="/Channel"  >ChannnelDetail Page</Link>
             <Link to="/search" >SearchTerm Page</Link>
-            <Link to="/About" >About Page</Link>
+         
             
            <SearchForm className="search-form" video={video} setVideo={setVideo} setResults={setResults} />
 
@@ -37,7 +36,7 @@ function App() {
         
         <SearchResult video={video} results={results} />
         </header>
-        
+   
 
 
         <main>
@@ -46,7 +45,7 @@ function App() {
           <Route path="/Video" element={<VideoDetail />}></Route>
           <Route path="/Channel" element={<ChannnelDetail />}></Route>
           <Route path="/search" element={<SearchTerm />}></Route>
-          <Route path="/About" element={<About />}></Route>
+
           
         </Routes>
         {/* <SearchFeed  /> */}
