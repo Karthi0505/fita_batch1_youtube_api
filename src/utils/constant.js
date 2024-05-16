@@ -22,3 +22,4 @@ export const demoVideoTitle = 'Default Video Title';
 export const demoChannelUrl = '/channel/defaultChannelId';
 export const demoChannelTitle = 'Default Channel Title';
 export const demoProfilePicture = 'https://example.com/default-profile-picture.jpg';
+
