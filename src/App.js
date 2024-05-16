@@ -12,7 +12,6 @@ import SearchForm from './Components/SearchForm.js';
 import { useState } from 'react';
 
 
-
 function App() {
   const [video, setVideo] = useState("");
   const [results, setResults] = useState("");
@@ -29,7 +28,7 @@ function App() {
             <Link to="/Video" >VideoDetail Page</Link>
             <Link to="/Channel"  >ChannnelDetail Page</Link>
             <Link to="/search" >SearchTerm Page</Link>
-            <Link to="/About" >About Page</Link>
+         
             
            <SearchForm className="search-form" video={video} setVideo={setVideo} setResults={setResults} />
 
@@ -37,7 +36,7 @@ function App() {
         
         <SearchResult video={video} results={results} />
         </header>
-        
+   
 
 
         <main>
@@ -46,7 +45,7 @@ function App() {
           <Route path="/Video" element={<VideoDetail />}></Route>
           <Route path="/Channel" element={<ChannnelDetail />}></Route>
           <Route path="/search" element={<SearchTerm />}></Route>
-          <Route path="/About" element={<About />}></Route>
+
           
         </Routes>
         {/* <SearchFeed  /> */}
