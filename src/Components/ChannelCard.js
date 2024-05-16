@@ -36,4 +36,5 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
   </div>
 );
 
+
 export default ChannelCard;

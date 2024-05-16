@@ -1,0 +1,25 @@
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height:auto;
+    background-color: black;
+    color: white;
+    width: 15%;
+    border: 20px;
+    border-color: white;
+}
+.category-btn {
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    margin: 10px 0px;
+    border-radius: 20px;
+    position:static;
+}
+.category-btn:hover {
+    background-color: #FC1503;
+}
