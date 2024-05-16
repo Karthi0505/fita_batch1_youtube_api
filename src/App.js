@@ -1,5 +1,4 @@
-  
-import './App.css';
+
 import {BrowserRouter, Routes, Route,  Link} from 'react-router-dom'
 import Feed from './Components/Feed.js'
 import VideoDetail from './Components/VideoDetail.js'
@@ -10,6 +9,7 @@ import SearchResult from './Components/SearchResult.js';
 // import SearchFeed from './Components/SearchFeed.js';
 import SearchForm from './Components/SearchForm.js';
 import { useState } from 'react';
+import './App.css';
 
 
 function App() {
