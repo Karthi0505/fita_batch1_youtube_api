@@ -24,20 +24,13 @@ function Videos({ videos, selectedCategory }) {
         {videos.map((curElement, idx) => (
           <div className="videos" key={idx}>
 
-<<<<<<< HEAD
           <ReactPlayer url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`}
           className="react-player"
           width="100%"
           height="100%"
           controls />
-=======
-            <ReactPlayer url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`}
-              className="react-player"
-              controls
-            />
->>>>>>> dfcb7be5a7040266504f3069c77a63e7d3c6d8c6
 
-
+ 
           </div>
         ))
         }
