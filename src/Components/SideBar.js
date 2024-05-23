@@ -5,12 +5,12 @@ import './Sidebar.css';
 const SideBar = ({ selectedCategory, setSelectedCategory }) => {
 
   return (
-    <aside className='sidebar'>
+    <div className='categories-container'>
 
       {categories.map((category) => (
 
         <button
-          className="sidebar-btn"
+          className="category-btn"
           onClick={() => setSelectedCategory(category.name)}
           key={category.name}
         >
@@ -19,11 +19,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
 
       ))}
 
-      <p className="copyright">
-        Copyright © 2024 React App
-      </p>
-
-    </aside>
+    </div>
   )
 }
 
