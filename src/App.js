@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Feed from './components/Feed.js'
 import VideoDetail from './components/VideoDetail.js'
-import ChannnelDetail from './components/ChannnelDetail.js'
-import SearchTerm from './components/SearchTerm.js'
+// import ChannnelDetail from './components/ChannnelDetail.js'
 import SearchBar from './components/SearchBar.js'
-import SideBar from './components/SideBar.js'
+import ChannelDetail from './components/ChannnelDetail.js';
+import SearchFeed from './components/SearchFeed.js';
 
 function App() {
   return (
@@ -16,24 +16,26 @@ function App() {
         {/* <h2> Links </h2> */}
         <header className='header d-flex'>
           <nav className=' header-links'>
-            <Link to="/" >Feed Page</Link>
-            <Link to="/Video" >VideoDetail Page</Link>
-            <Link to="/Channel"  >ChannnelDetail Page</Link>
-            <Link to="/search" >SearchTerm Page</Link>
+
+            <Link to="/"  >Feed </Link>
+            <Link to="/Video" >VideoDetail </Link>
+            {/* <Link to="/channel/your_channel_id"> Channel Detail</Link> */}
+            <Link to="/Channels/:id"  >ChannelDetail </Link>
+            <Link to="/search" >SearchFeed </Link>
             
           </nav>
         
         <SearchBar />
         </header>
         
-        <SideBar />
+        
 
 
         <Routes>
           <Route path="/" element={<Feed />}></Route>
           <Route path="/Video" element={<VideoDetail />}></Route>
-          <Route path="/Channel" element={<ChannnelDetail />}></Route>
-          <Route path="/search" element={<SearchTerm />}></Route>
+          <Route path="/channels/:id" element={<ChannelDetail />}></Route>
+          <Route path="/search" element={<SearchFeed/>}></Route>
           
         </Routes>
         
