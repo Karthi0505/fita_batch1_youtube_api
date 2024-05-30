@@ -3,6 +3,11 @@ import Videos from './Videos.js';
 import SideBar from './SideBar.js';
 import './Feed.css';
 import { fetchFromAPI } from "../utils/fetchFromAPI.js";
+import React, { useEffect, useState } from "react";
+import Videos from './Videos.js';
+import SideBar from './SideBar.js';
+import './Feed.css';
+import { fetchFromAPI } from "../utils/fetchFromAPI.js";
 
 const Feed = () => {
 
@@ -39,4 +44,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default Feed

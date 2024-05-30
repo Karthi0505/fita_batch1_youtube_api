@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items:flex-end;
+  gap: 20px;
+  padding: 20px;
+  position: absolute;
+  
+ }
+ 
+ .col {
+   width: 300px;
+   border: 1px solid #980505;
+   border-radius: 8px;
+   
+  
+ }
+ .react-player {
+ 
+  border-radius: 8px;
+  height: 100px;
+   overflow: hidden;  
+  box-shadow: 0 4px 8px rgba(201, 8, 8, 0.1); 
+}
+
+ 
+ 
+ .col:hover {
+   transform: translateY(-5px);
+ }
+ 
+ .col h2 {
+   font-size: 18px;
+   margin: 16px;
+   white-space: nowrap;
+   overflow: hidden;
+   
+ }
+ 
+
+ h1 {
+   text-align: justify;
+   color: #333;
+   margin-bottom: 20px;
+ }
+ 

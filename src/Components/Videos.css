@@ -1,12 +1,46 @@
+/* Videos.css */
+
 .videos {
-    display: "flex";
-    flex-direction:"row";
-    flex-wrap: "wrap";
-    justify-content: "flex-start";
-    align-items: "flex-start";
-    gap: "16px";
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.videos > div {
+  position: relative;
+  padding:0%;
+  justify-content: flex-end;
+}
+
+.react-player {
+  position: absolute;
+  width: 50%;
+  height: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+/* .videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.videos div {
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px black;
 }
 .img {
     width: 480px ;
     height: 360px ;
-}
+} */
