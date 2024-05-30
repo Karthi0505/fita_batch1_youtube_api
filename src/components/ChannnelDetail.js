@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import Videos from "./Videos";
 import ChannelCard from "./ChannelCard";
+// import { fetchFromAPI } from "../utils/fetchFromAPI";
+import "./ChannelDetail.css";
+import { fetchFromAPI } from "../utils/fetchFromAPI";
+// const url = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCBVjMGOIkavEAhyqpxJ73Dw&part=snippet%2Cid&order=date&maxResults=50';
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': 'b74c646f33mshf8c9cdd63e88b3dp1b7907jsne0b2fc9a5249',
+// 		'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
+// 	}
+// };
 
-const url = 'https://youtube-v31.p.rapidapi.com/captions?part=snippet&videoId=M7FIvfx5J10';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'b74c646f33mshf8c9cdd63e88b3dp1b7907jsne0b2fc9a5249',
-		'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
-	}
-}
 
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState();
@@ -21,30 +23,37 @@ const ChannelDetail = () => {
 
   useEffect(() => {
     const fetchResults = async () => {
-      const data = await fetch(url,options);
+      
+        const channelResponse = await fetchFromAPI(`/search?channelId`);
+        console.log ("aaaa",channelResponse)
+        // const channelData = await channelResponse.json();
+        // console.log("Channel data:", channelData); 
 
-      setChannelDetail(data?.items[0]);
+        const videosResponse = await fetchFromAPI(`/api/videos?channelId=${id}`);
+        console.log("ww",videosResponse)
+        // const videosData = await videosResponse.json();
+        // console.log("Videos data:", videosData); 
 
-      const videosData = await fetch(url,options);
-
-      setVideos(videosData?.items);
+        setChannelDetail(channelResponse);
+        setVideos(videosResponse);
+      
+        
+      
     };
 
     fetchResults();
   }, [id]);
 
+  
+
+
   return (
-    <div style={{ minHeight: "95vh" }}>
-      <div style={{
-        height: '300px',
-        background: 'linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)',
-        zIndex: 10,
-      }} />
-      <div style={{ position: "relative", top: "-93px" }}>
+    <div className="channel-detail-container">
+      <div className="gradient-background" />
+      <div className="channel-card-wrapper">
         <ChannelCard channelDetail={channelDetail} />
       </div>
-      <div style={{ padding: "16px", display: "flex" }}>
-        <div style={{ marginRight: "100px" }}></div>
+      <div className="videos-wrapper">
         <Videos videos={videos} />
       </div>
     </div>

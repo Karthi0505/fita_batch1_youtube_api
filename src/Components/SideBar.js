@@ -1,7 +1,6 @@
 import React from 'react';
 import { categories } from '../utils/constant';
 import './Sidebar.css';
-
 const SideBar = ({ selectedCategory, setSelectedCategory }) => {
 
   return (

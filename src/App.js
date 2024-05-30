@@ -26,10 +26,12 @@ function App() {
           <nav className=' header-links'>
           <img src='youtube icon.jpeg' alt='' />
 
-            <Link to="/" >Feed Page</Link>
-            <Link to="/Video" >VideoDetail Page</Link>
-            <Link to="/Channel"  >ChannnelDetail Page</Link>
-            <Link to="/search" >SearchTerm Page</Link>
+
+            <Link to="/"  >Feed </Link>
+            <Link to="/Video" >VideoDetail </Link>
+            {/* <Link to="/channel/your_channel_id"> Channel Detail</Link> */}
+            <Link to="/Channels/:id"  >ChannelDetail </Link>
+            <Link to="/search" >SearchFeed </Link>
          
             
            <SearchForm className="search-form" video={video} setVideo={setVideo} setResults={setResults} />
@@ -38,15 +40,18 @@ function App() {
         
         <SearchResult video={video} results={results} />
         </header>
-   
+        
+        
 
 
         <main>
         <Routes>
         {!results &&<Route path="/" element={<Feed />}></Route>}
           <Route path="/Video" element={<VideoDetail />}></Route>
-          <Route path="/Channel" element={<ChannnelDetail />}></Route>
-          <Route path="/search" element={<SearchFeed />}></Route>
+
+          <Route path="/channels/:id" element={<ChannelDetail />}></Route>
+          <Route path="/search" element={<SearchFeed/>}></Route>
+
 
           
         </Routes>
