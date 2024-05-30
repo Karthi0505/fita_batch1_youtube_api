@@ -1,15 +1,14 @@
   
 import './App.css';
 import {BrowserRouter, Routes, Route,  Link} from 'react-router-dom'
-import Feed from './Components/Feed.js'
-import VideoDetail from './Components/VideoDetail.js'
-import ChannnelDetail from './Components/ChannnelDetail.js'
-import SearchTerm from './Components/SearchTerm.js'
-import About from './Components/About.js';
-import SearchResult from './Components/SearchResult.js';
-// import SearchFeed from './Components/SearchFeed.js';
-import SearchForm from './Components/SearchForm.js';
+import Feed from './components/Feed.js'
+import VideoDetail from './components/VideoDetail.js'
+// import SearchTerm from './Components/SearchTerm.js'
+import SearchResult from './components/SearchResult.js';
+import SearchFeed from './components/SearchFeed.js';
+import SearchForm from './components/SearchForm.js';
 import { useState } from 'react';
+import ChannelDetail from './components/ChannnelDetail.js';
 
 
 function App() {
