@@ -1,19 +1,20 @@
-  
-import './App.css';
+
 import {BrowserRouter, Routes, Route,  Link} from 'react-router-dom'
-import Feed from './components/Feed.js'
-import VideoDetail from './components/VideoDetail.js'
-// import SearchTerm from './Components/SearchTerm.js'
-import SearchResult from './components/SearchResult.js';
-import SearchFeed from './components/SearchFeed.js';
-import SearchForm from './components/SearchForm.js';
+import Feed from './Components/Feed.js'
+import VideoDetail from './Components/VideoDetail.js'
+import ChannnelDetail from './Components/ChannnelDetail.js'
+import SearchTerm from './Components/SearchTerm.js'
+// import About from './Components/About.js';
+import SearchResult from './Components/SearchResult.js';
+// import SearchFeed from './Components/SearchFeed.js';
+import SearchForm from './Components/SearchForm.js';
 import { useState } from 'react';
-import ChannelDetail from './components/ChannnelDetail.js';
 
 
 function App() {
   const [video, setVideo] = useState("");
   const [results, setResults] = useState("");
+  
   
   return (
     <div>
@@ -43,10 +44,12 @@ function App() {
 
         <main>
         <Routes>
-          <Route path="/" element={<Feed />}></Route>
+        {!results &&<Route path="/" element={<Feed />}></Route>}
           <Route path="/Video" element={<VideoDetail />}></Route>
+
           <Route path="/channels/:id" element={<ChannelDetail />}></Route>
           <Route path="/search" element={<SearchFeed/>}></Route>
+
 
           
         </Routes>
