@@ -1,5 +1,8 @@
+
 import React from 'react';
 import Loader from './Loader';
+import VideoCard from './VideoCard';
+import ChannelCard from './ChannelCard';
 import './Videos.css';
 import ReactPlayer from 'react-player';
 
@@ -23,13 +26,15 @@ function Videos({ videos, selectedCategory }) {
         {videos.map((curElement, idx) => (
           <div className="videos" key={idx}>
 
-          <ReactPlayer url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`}
-          className="react-player"
-          width="100%"
-          height="100%"
-          controls />
+            {/* <ReactPlayer url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`}
+              className="react-player"
+              controls
+            /> */}
+            
+            {curElement.id.videoId && <VideoCard video={curElement} /> }
+            {curElement.id.channelId && <ChannelCard channelDetail={curElement} />}
 
- 
+
           </div>
         ))
         }

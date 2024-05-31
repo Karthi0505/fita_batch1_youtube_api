@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import { Link } from 'react-router-dom';
 import { demoVideoUrl, demoChannelUrl, demoThumbnailUrl } from '../utils/constant';
 import './VideoCard.css';
@@ -17,6 +18,7 @@ const VideoCard = ({ video }) => {
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl} className="video-link">
 
         <img src={thumbnailUrl || demoThumbnailUrl} alt={videoTitle} className="video-thumbnail" />
+
       </Link>
 
 

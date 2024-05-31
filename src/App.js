@@ -3,8 +3,8 @@ import {BrowserRouter, Routes, Route,  Link} from 'react-router-dom'
 import Feed from './Components/Feed.js'
 import VideoDetail from './Components/VideoDetail.js'
 import ChannnelDetail from './Components/ChannnelDetail.js'
-import SearchTerm from './Components/SearchTerm.js'
-// import About from './Components/About.js';
+import SearchTerm from './Components/SearchTerm.js';
+
 import SearchResult from './Components/SearchResult.js';
 // import SearchFeed from './Components/SearchFeed.js';
 import SearchForm from './Components/SearchForm.js';
@@ -22,14 +22,15 @@ function App() {
         
         <header className='header d-flex'>
           <nav className=' header-links'>
-          <img src='youtube icon.jpeg' alt='' />
 
+          <img src='youtube.png' alt='' />
+          
+          {/* 
+            <Link to="/" > Feed </Link>
+            <Link to="/Video" > VideoDetail </Link>
+            <Link to="/Channel"  > ChannnelDetail </Link>
+            <Link to="/search" > SearchFeed </Link> */}
 
-            <Link to="/"  >Feed </Link>
-            <Link to="/Video" >VideoDetail </Link>
-            {/* <Link to="/channel/your_channel_id"> Channel Detail</Link> */}
-            <Link to="/Channels/:id"  >ChannelDetail </Link>
-            <Link to="/search" >SearchFeed </Link>
          
             
            <SearchForm className="search-form" video={video} setVideo={setVideo} setResults={setResults} />
