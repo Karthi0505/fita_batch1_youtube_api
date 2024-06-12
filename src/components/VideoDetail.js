@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import ReactPlayer from "react-player";
-
-const url = 'https://youtube-v31.p.rapidapi.com/videos?part=contentDetails%2Csnippet%2Cstatistics&id=7ghhRHRP6t4';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'b74c646f33mshf8c9cdd63e88b3dp1b7907jsne0b2fc9a5249',
-		'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
-	}
-};
-
-
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom';
+import {fetchFromAPI} from '../utils/fetchFromAPI'
+import Loader from './Loader';
+import ReactPlayer from 'react-player';
+import Videos from './Videos';
+import './VideoDetail.css'
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
@@ -19,57 +12,45 @@ const VideoDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    // Custom fetch function renamed to avoid conflict with global fetch
-    const fetchData = async (url, options) => {
-      const response = await fetch(url, options);
-      const data = await response.json();
-      console.log(data)
-      console.log(data.items)
-      return data;
-    };
+    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
+      .then((data) => setVideoDetail(data.items[0]))
 
-    fetchData(url, options)
-      .then((data) => setVideoDetail(data.items[0]));
-
-    fetchData(url, options)
-      .then((data) => setVideos(data.items));
-      
+    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
+      .then((data) => setVideos(data.items))
   }, [id]);
 
-  if (!videoDetail?.snippet) return <div>Loading...</div>;
+  if (!videoDetail?.snippet) return <Loader />
 
-  const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount,commentCount } } = videoDetail;
+  const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
   return (
-    <div style={{ minHeight: "95vh" }}>
-      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-        <div>
-          <ReactPlayer url={`https://www.youtube.com/watch?v=${videoDetail.id}`} className="react-player" controls />
-          <h5 style={{ fontWeight: "bold", margin: "10px 0" }}>{title}</h5>
-          <div style={{ display: "flex", justifyContent: "space-between", color: "#000" }}>
-            <Link to={`/channel/${channelId}`} style={{ textDecoration: "none", color: "inherit" }}>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <span>{channelTitle}</span>
-                <span style={{ fontSize: "12px", color: "gray", marginLeft: "5px" }}>&#10003;</span>
-              </div>
+    <div className='video-detail'>
+      <div className='video-detail-main'>
+        <div className='video-player-container'>
+
+          <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className="react-player" controls />
+
+          <h1 className='video-title'> {title} </h1>
+          <div className='video-info'>
+            <Link to={`/channel/${channelId}`} className="channel-link">
+              <h2 className='channel-title'>
+                {channelTitle}
+                <span className='check-icon'>&#10003;</span>
+              </h2>
             </Link>
-            <div style={{ display: "flex", gap: "20px", opacity: 0.7 }}>
-              <span>{parseInt(viewCount).toLocaleString()} views</span>
-              <span>{parseInt(likeCount).toLocaleString()} likes</span>
-              <span>{parseInt(commentCount).toLocaleString()} No.of.Comments </span>
+            <div className='video-stats'>
+              <p> {parseInt(viewCount).toLocaleString()} views </p>
+              <p> {parseInt(likeCount).toLocaleString()} likes </p>
+
             </div>
           </div>
         </div>
-        <div>
-          {/* Videos component rendering */}
-          {videos && videos.map((video) => (
-            <div key={video.id.videoId}>
-              {/* <h5>{video.snippet.title}</h5> */}
-              {/* Render other details for each related video */}
-            </div>
-          ))}
-        </div>
       </div>
+      <div className='related-videos'>
+        <Videos videos={videos} direction="column" />
+
+      </div>
+
     </div>
   );
 };

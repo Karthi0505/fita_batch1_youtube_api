@@ -1,4 +1,4 @@
-.channel-card-container {
+.channel-card {
   box-shadow: none;
   border-radius: 20px;
   display: flex;
@@ -8,42 +8,35 @@
   max-width: 356px; 
   height: 326px;
   margin: auto;
+  background-color: #1e1e1e;
 }
-
-.card-link {
-  text-decoration: none;
-  color:blue; 
-}
-
-.card-content {
+.channel-card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   color: #fff;
 }
-
-.profile-picture {
+.channel-card-image {
   border-radius: 50%;
   height: 180px;
   width: 180px;
-  margin-bottom: 10px; 
+  margin-bottom: 16px; 
   border: 1px solid #e3e3e3;
 }
-
 .channel-title {
   font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 6px; 
+  font-size: 18px;
+  margin: 0; 
 }
-
 .check-icon {
-  font-size: 1rem;
+  font-size: 14px;
   color: gray;
-  margin-left: 4px; 
+  margin-left: 5px; 
 }
-
-.subscriber-count {
-  font-size: 1rem;
+.channel-card-subscribers{
+  font-size: 15px;
+  font-weight: 500;
   color: gray;
+  margin: 0;
 }
