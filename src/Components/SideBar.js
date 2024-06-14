@@ -14,6 +14,10 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
           onClick={() => setSelectedCategory(category.name)}
           key={category.name}
         >
+          <span className="category-icon">
+        <img src={process.env.PUBLIC_URL + category.icon} alt={category.name} />
+        </span>
+
           <h3 className='category-name'> {category.name} </h3>
         </button>
 

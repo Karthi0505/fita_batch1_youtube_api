@@ -1,8 +1,8 @@
-.sidebar{
+.sidebar {
     display: flex;
     flex-direction: row;
-    overflow-y:auto;
-    height:auto;
+    overflow-y: auto;
+    height: auto;
     background-color: black;
     margin-right: 20px;
     border: 1px solid #ccc;
@@ -16,11 +16,12 @@
 }
 
 @media (min-width: 768px) {
-    .sidebar{
+    .sidebar {
         flex-direction: column;
         height: 95%;
     }
 }
+
 .sidebar-btn {
     display: flex;
     align-items: center;
@@ -33,23 +34,44 @@
     transition: background-color 0.3s;
     color: white;
 }
+
 .sidebar-btn:hover {
-    background-color: rgba(252,21,3,0.7);
+    background-color: red;
 }
-.sidebar-btn.selected{
-    background-color: #FC1503;
+
+.sidebar-btn.selected {
+    background-color: red;
 }
+
 .sidebar-item {
     cursor: pointer;
     margin-bottom: 8px;
 }
+
 .sidebar-item.active {
     font-weight: bold;
 }
-.category-name {
-    display: inline-block;
+
+.category-icon {
+    color: red;
+    background-color: white;
+    margin-right: 15px;
 }
-.copyright{
+
+.category-icon.selected {
+    color: white;
+}
+
+.category-name {
+    opacity: 0.8;
+    color: aliceblue;
+}
+
+.category-name.selected {
+    opacity: 1;
+}
+
+.copyright {
     margin-top: 16px;
     color: white;
     background-color: black;
