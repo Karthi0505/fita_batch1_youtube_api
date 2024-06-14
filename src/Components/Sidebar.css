@@ -49,3 +49,9 @@
 .category-name {
     display: inline-block;
 }
+.copyright{
+    margin-top: 16px;
+    color: white;
+    background-color: black;
+    font-size: 14px;
+}

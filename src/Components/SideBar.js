@@ -18,7 +18,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
         </button>
 
       ))}
-
+      <p className="copyright"> Copyright @ 2022 YOUTUBE </p>
     </aside>
   )
 }

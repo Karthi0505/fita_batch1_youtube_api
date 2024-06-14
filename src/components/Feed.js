@@ -26,7 +26,7 @@ const Feed = () => {
       <div className="sidebar-container"> 
 
       <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-      <p className="copyright"> Copyright @ 2022 YOUTUBE </p>
+      
 
       </div>
 
