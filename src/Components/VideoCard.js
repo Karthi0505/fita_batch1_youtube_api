@@ -26,9 +26,9 @@ const VideoCard = ({ video: {id: {videoId} , snippet} }) => {
 
         </Link>
 
-        <Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl} >
+        <Link to={snippet?.channelId? `/channel/${snippet?.channelId}` : demoChannelUrl} >
           <p className="video-card-channel">
-            {channelTitle} <span className="check-icon">&#10003;</span>
+            {channelTitle || demoChannelTitle} <span className="check-icon">&#10003;</span>
           </p>
 
         </Link>

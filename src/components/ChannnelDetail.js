@@ -13,11 +13,11 @@ const ChannelDetail = () => {
   useEffect(() => {
     const fetchResults = async () => {
 
-      const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
+      const data = await fetchFromAPI(`channels?part=snippet&id=${id}&maxResults=50`);
       console.log("aaaa", data)
       setChannelDetail(data?.items[0]);
 
-      const videosData = await fetchFromAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`);
+      const videosData = await fetchFromAPI(`search?channelId=${id}&part=snippet%2Cid&order=date&maxResults=50`);
       console.log("ww", videosData)
       setVideos(videosData?.items);
 

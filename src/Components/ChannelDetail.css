@@ -16,7 +16,12 @@
 .channel-videos-spacer{
   margin-right: 100px;
 }
-
+@media (min-width:768px) {
+  .channel-videos-spacer{
+    margin-right: 100px;
+  }
+  
+}
   
   
   

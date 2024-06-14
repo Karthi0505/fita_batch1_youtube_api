@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { demoProfilePicture } from '../utils/constant';
-import './ChannelCard.css'; 
+import './ChannelCard.css';
 
 const ChannelCard = ({ channelDetail, marginTop }) => {
   const channelId = channelDetail?.id?.channelId;
   const channelTitle = channelDetail?.snippet?.title;
   const profilePicture = channelDetail?.snippet?.thumbnails?.high?.url;
   const subscriberCount = channelDetail?.statistics?.subscriberCount;
-
+  return (
     <div className="channel-card" style={{ marginTop }}>
       <Link to={`/channel/${channelId}`}>
         <div className="channel-card-content">
           <img
-            src={profilePicture || demoProfilePicture} 
+            src={profilePicture || demoProfilePicture}
             alt={channelTitle}
             className="channel-card-image"
           />
@@ -29,6 +29,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
         </div>
       </Link>
     </div>
+  )
 };
 
 export default ChannelCard;

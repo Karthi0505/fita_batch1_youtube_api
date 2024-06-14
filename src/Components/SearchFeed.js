@@ -1,78 +1,34 @@
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { fetchFromAPI } from "../utils/fetchFromAPI";
+import Videos from "./Videos";
+import "./SearchFeed.css";
 
-import React, { useEffect, useState } from 'react'
-import "./SearchFeed.css"
-import ReactPlayer from 'react-player';
-import { fetchFromAPI } from '../utils/fetchFromAPI';
-// import SearchBar from './SearchBar';
+const SearchFeed = () => {
+  const [videos, setVideos] = useState(null);
+  const { searchTerm } = useParams();
 
-const SearchFeed = ({ query }) => {
-   const [searchQuery, setSearchQuery] = useState([])
+  useEffect(() => {
+    console.log('Fetching videos for:', searchTerm);
+    fetchFromAPI(`search?part=snippet&q=${searchTerm}`)
+      .then((data) => {
+        console.log('Fetched data:', data);
+        setVideos(data.items)
+      });
+  }, [searchTerm]);
 
-   useEffect(() => {
-
-      // const fetchData = () => {
-         if (query) {
-
-         fetchFromAPI(`search?q=${query}&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`)
-            .then(function (res) {
-               console.log("aa ", res)
-               // return res.json()
-            // })
-            // .then(function (res) {
-            //    console.log(" ddd ", res)
-               console.log(" eee ", res?.items)
-
-               setSearchQuery(res.items)
-               console.log("SS", searchQuery)
-
-               console.log("rr", searchQuery)
-               console.log("ww", searchQuery[0])
-               // console.log("www", searchQuery[0].kind)
-            })
-            .catch(error => {
-               console.error('Error fetching data: ', error);
-
-
-      })
-   }
-;
-      // fetchData();
-   }, [query]);
-
-   return (
-      <>
-         {/* <h1>Search Videos...</h1>  */}
-         
-         <div className="display-flex" >
-            {
-               searchQuery.map((curElement) => {
-                  // const { id, snippet } = curElement;
-
-                  return (
-                     <div className="col">
-                        <ReactPlayer
-                  url={`https://www.youtube.com/watch?v=${curElement.id.videoId}`}
-                  className="react-player"
-                  controls
-               />
-                        
-
-                        {/* <h2>{curElement.snippet.title}</h2> */}
-                        {/* <img src={curElement.snippet.thumbnails?.medium?.url} alt={curElement.snippet.title} /> */}
-                        
-                     </div>
-                  );
-               })
-            }
-
-         </div>
-         
-{/* <SearchBar /> */}
-
- 
-
-      </>
-   );
+  return (
+    <div className="search-feed-container">
+      <h4 className="search-title">
+        Search Results for <span style={{ color: "#FC1503" }}>{searchTerm}</span> videos
+      </h4>
+      <div className="videos-container">
+        <div className="videos-list">
+          {videos && <Videos videos={videos} />}
+        </div>
+      </div>
+    </div>
+  );
 };
 
-export default SearchFeed
+export default SearchFeed;

@@ -18,7 +18,7 @@
     height: 100%;
 }
 .video-title{
-    color: #fff;
+    color: black;
     font-size: 24px;
     font-weight: bold;
     padding: 16px;
@@ -26,12 +26,12 @@
 .video-info{
     display: flex;
     justify-content: space-between;
-    color: #fff;
+    color: black;
     padding: 8px 16px;
 }
 .channel-link{
     text-decoration: none;
-    color: #fff;
+    color: black;
 }
 .channel-title{
     display: flex;

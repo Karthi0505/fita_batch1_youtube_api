@@ -4,24 +4,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; 
-  max-width: 356px; 
+  width: 356px; 
+  /* max-width: 356px;  */
   height: 326px;
   margin: auto;
   background-color: #1e1e1e;
 }
+@media (min-width:768px) {
+  .channel-card{
+    width: 320px;
+  }
+  
+}
 .channel-card-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  /* align-items: center; */
   text-align: center;
-  color: #fff;
+  color: white;
 }
 .channel-card-image {
   border-radius: 50%;
   height: 180px;
   width: 180px;
-  margin-bottom: 16px; 
+  margin-bottom: 20px; 
   border: 1px solid #e3e3e3;
 }
 .channel-title {

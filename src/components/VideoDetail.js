@@ -30,7 +30,7 @@ const VideoDetail = () => {
 
           <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className="react-player" controls />
 
-          <h1 className='video-title'> {title} </h1>
+          <h3 className='video-title'> {title} </h3>
           <div className='video-info'>
             <Link to={`/channel/${channelId}`} className="channel-link">
               <h2 className='channel-title'>
