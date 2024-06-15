@@ -15,7 +15,7 @@ const App = () => {
         <header className='header d-flex'>
           <nav className=' header-links'>
 
-            <img src='youtube.png' alt='' />
+            <img src='youtube.png' alt=''></img>
 
             <SearchBar />
 
