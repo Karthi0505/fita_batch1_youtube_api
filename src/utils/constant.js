@@ -2,7 +2,7 @@ export const logo = 'youtube.png';
 
 export const categories = [
   { name: 'New', icon: 'home.png', },
-  { name: 'JS Mastery', icon: 'js.png', },
+  { name: 'JS', icon: 'js.png', },
   { name: 'Coding', icon: 'code.png', },
   { name: 'ReactJS', icon: 'react js.png', },
   { name: 'NextJS', icon: 'next.png', },
